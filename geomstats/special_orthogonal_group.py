@@ -4,6 +4,8 @@ import numpy as np
 
 from geomstats.lie_group import LieGroup
 
+ATOL = 1e-5
+
 
 def closest_rotation_matrix(mat):
     """
@@ -436,6 +438,7 @@ class SpecialOrthogonalGroup(LieGroup):
                                - skew_matrix_from_vector(point[i]) / 2)
 
         assert jacobian.ndim == 3
+
         return jacobian
 
     def random_uniform(self, n_samples=1):
